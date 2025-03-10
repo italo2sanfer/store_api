@@ -1,0 +1,102 @@
+    1  apt update && apt upgrade
+    2  su
+    3  startx
+    4  ifconfig
+    5  sudo ifconfig
+    6  ip a
+    7  su
+    8  sudo dhclientl
+    9  sudo dhclient
+   10  cd
+   11  sudo dhclient
+   12  ip a
+   13  sudo apt install openssh-server
+   14  ip a
+   15  sudo dhclient
+   16  ip a
+   17  ls
+   18  ip a
+   19  sudo dhclient
+   20  ip a
+   21  sudo vim  /etc/hosts /etc/hostname
+   22  sudo dhclient
+   23  ip a
+   24  sudo dhclient
+   25  ip a
+   26  ls ~/.ssh
+   27  ls -a
+   28  ssh-keygen -t rsa -b 2048
+   29  ls -l
+   30  ls .ssh/
+   31  cat .ssh/id_rsa.pub 
+   32  l
+   33  ls -l
+   34  mkdir Workspace
+   35  cd Workspace/
+   36  git@github.com:italo2sanfer/store_api.git
+   37  git clone git@github.com:italo2sanfer/store_api.git
+   38  ls
+   39  python3 main.py 
+   40  ls
+   41  python3 main.py 
+   42  ip a
+   43  /usr/bin/python3 /home/dev/Workspace/store_api/main.py
+   44  git config --global user.name "Italo Sanfer"
+   45  git config --global user.email "italo2sanfer@gmail.com"
+   46  pip install fastapi
+   47  pip3 install fastapi
+   48  apt install python3-pip
+   49  sudo apt install python3-pip
+   50  sudo apt install --no-install-recommends python3-pip
+   51  pip3 install fastapi
+   52  RUN curl https://pyenv.run | bash
+   53  curl https://pyenv.run | bash
+   54  sudo apt install curl
+   55  curl https://pyenv.run | bash
+   56  source ~/.bashrc 
+   57  pyenv virtualenv store_app
+   58  pyenv activate store_api
+   59  pyenv activate store_app
+   60  source ~/.bashrc 
+   61  pyenv 
+   62  pyenv activate 
+   63  pyenv activate store_app
+   64  pyenv virtualenv --help 
+   65  pyenv 
+   66  pyenv virtualenvs 
+   67  pyenv version
+   68  pyenv versions 
+   69  pyenv virtualenv app
+   70  pyenv virtualenvs 
+   71  sudo apt install python3.11-venv
+   72  pyenv activate store_app
+   73  pyenv virtualenv store_app
+   74  pyenv virtualenvs 
+   75  pyenv activate store_app 
+   76  pip install fastapi
+   77  pip install "uvicorn[standard]"
+   78  uvicorn main:app --reload
+   79  /usr/bin/python3 /home/dev/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/printEnvVariablesToFile.py /home/dev/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/deactivate/bash/envVars.txt
+   80  startx
+   81  uvicorn main:app --reload
+   82  /usr/bin/python3 /home/dev/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/printEnvVariablesToFile.py /home/dev/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/deactivate/bash/envVars.txt
+   83  ip a
+   84  sudo dhclient
+   85  ip a
+   86  startx
+   87  /usr/bin/python3 /home/dev/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/printEnvVariablesToFile.py /home/dev/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/deactivate/bash/envVars.txt
+   88  ip a
+   89  sudo dhclient
+   90  ip a
+   91  sudo dhclient
+   92  ip a
+   93  /usr/bin/python3 /home/dev/.vscode-server/extensions/ms-python.python-2024.22.1-linux-x64/python_files/printEnvVariablesToFile.py /home/dev/.vscode-server/extensions/ms-python.python-2024.22.1-linux-x64/python_files/deactivate/bash/envVars.txt
+   94  ip a
+   95  sudo dhclient
+   96  ip a
+   97  git status
+   98  git pull origin main 
+   99  history 
+  100  history |less
+  101  su
+  102  history > ~/historico_vm.txt
