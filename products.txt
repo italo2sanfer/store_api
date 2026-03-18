@@ -1,2 +1,0 @@
-cod=1;name=notebook
-cod=2;name=mouse
