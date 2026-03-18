@@ -1,2 +1,4 @@
 cod=1;name=notebook
 cod=2;name=mouse
+cod=3;name=keyboard
+cod=4;name=monitor

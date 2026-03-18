@@ -1,0 +1,1 @@
+URL_PATTERN = "/workspaces/store_api/"

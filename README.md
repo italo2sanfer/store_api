@@ -12,6 +12,20 @@
 1. requirements; pyenv
 1. pré-commit;
 
+# Tests
+
+## By curl
+```
+$ curl -X GET  http://127.0.0.1:8000/file_handler/go
+```
+
+## By Web
+http://127.0.0.1:8000/file_handler/go
+
+## Execution
+```
+$ uvicorn main:app --reload
+```
 
 ## Links
 
@@ -19,5 +33,5 @@
 - https://github.com/peregrinis-com/construct/tree/main
 - https://github.com/italo2sanfer/dio-trilha-python/tree/main
 - https://fastapi.tiangolo.com/pt/tutorial/path-params/#suporte-do-openapi
-- https://medium.com/@antonio.carlos.analista/- como-construir-apis-em-python-39f0b3a74d55
-- https://medium.com/@antonio.carlos.analista/- python-como-usar-sqlalchemy-ba8e64f90570
+- https://medium.com/@antonio.carlos.analista/como-construir-apis-em-python-39f0b3a74d55
+- https://medium.com/@antonio.carlos.analista/python-como-usar-sqlalchemy-ba8e64f90570
