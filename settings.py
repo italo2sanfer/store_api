@@ -1,1 +1,1 @@
-URL_PATTERN = "/workspaces/store_api/"
+URL_PATTERN = "/app/"

@@ -92,7 +92,7 @@ async def file_handler_add(pk: int, name: str):
     pfh1 = ProductFH()
     pfh1.object = Product(pk, name)
     if pfh1.add():
-        return {"user_id": "Done."}
+        return {"message": "Done."}
     return {"message": "PK Already exists."}
 
 @app.get("/items")
