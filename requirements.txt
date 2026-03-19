@@ -7,3 +7,5 @@ python-dotenv
 email-validator
 requests
 jsonify
+cloud-sql-python-connector[pg8000]
+sqlalchemy
