@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 from google.cloud.sql.connector import Connector
 
-INSTANCE_CONNECTION_NAME = "projeto:regiao:instancia"
+INSTANCE_CONNECTION_NAME = os.getenv("INSTANCE_CONNECTION_NAME", "projeto:regiao:instancia")
 DB_USER = os.getenv("DB_USER", "usuario")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "senha123")
 DB_HOST = os.getenv("DB_HOST", "localhost")
