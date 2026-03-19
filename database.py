@@ -23,8 +23,7 @@ def getconn():
     )
     return conn
 
-# Cria o pool de conexão com SQLAlchemy
-engine = sqlalchemy.create_engine(
+engine = create_engine(
     "postgresql+pg8000://",
     creator=getconn,
 )
