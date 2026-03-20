@@ -35,13 +35,13 @@ def on_startup():
 # ---------------- Suppliers ----------------
 @app.get("/suppliers", response_model=List[schemas.Supplier])
 @limiter.limit("100/minute")
-def list_suppliers(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+def list_suppliers(request: Request, skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return crud.get_suppliers(db, skip=skip, limit=limit)
 
 
 @app.get("/suppliers/{supplier_id}", response_model=schemas.Supplier)
 @limiter.limit("100/minute")
-def get_supplier(supplier_id: int, db: Session = Depends(get_db)):
+def get_supplier(request: Request, supplier_id: int, db: Session = Depends(get_db)):
     supplier = crud.get_supplier(db, supplier_id)
     if not supplier:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Supplier not found")
@@ -51,14 +51,14 @@ def get_supplier(supplier_id: int, db: Session = Depends(get_db)):
 @app.post("/suppliers", response_model=schemas.Supplier, status_code=status.HTTP_201_CREATED,
           dependencies=[Depends(verify_api_key)])
 @limiter.limit("20/minute")
-def create_supplier(supplier_in: schemas.SupplierCreate, db: Session = Depends(get_db)):
+def create_supplier(request: Request, supplier_in: schemas.SupplierCreate, db: Session = Depends(get_db)):
     return crud.create_supplier(db, supplier_in)
 
 
 @app.put("/suppliers/{supplier_id}", response_model=schemas.Supplier,
          dependencies=[Depends(verify_api_key)])
 @limiter.limit("20/minute")
-def update_supplier(supplier_id: int, supplier_in: schemas.SupplierUpdate, db: Session = Depends(get_db)):
+def update_supplier(request: Request, supplier_id: int, supplier_in: schemas.SupplierUpdate, db: Session = Depends(get_db)):
     supplier = crud.get_supplier(db, supplier_id)
     if not supplier:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Supplier not found")
@@ -68,7 +68,7 @@ def update_supplier(supplier_id: int, supplier_in: schemas.SupplierUpdate, db: S
 @app.delete("/suppliers/{supplier_id}", status_code=status.HTTP_204_NO_CONTENT,
             dependencies=[Depends(verify_api_key)])
 @limiter.limit("20/minute")
-def delete_supplier(supplier_id: int, db: Session = Depends(get_db)):
+def delete_supplier(request: Request, supplier_id: int, db: Session = Depends(get_db)):
     supplier = crud.get_supplier(db, supplier_id)
     if not supplier:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Supplier not found")
@@ -79,13 +79,13 @@ def delete_supplier(supplier_id: int, db: Session = Depends(get_db)):
 # ---------------- Products ----------------
 @app.get("/products", response_model=List[schemas.Product])
 @limiter.limit("100/minute")
-def list_products(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+def list_products(request: Request, skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return crud.get_products(db, skip=skip, limit=limit)
 
 
 @app.get("/products/{product_id}", response_model=schemas.Product)
 @limiter.limit("100/minute")
-def get_product(product_id: int, db: Session = Depends(get_db)):
+def get_product(request: Request, product_id: int, db: Session = Depends(get_db)):
     product = crud.get_product(db, product_id)
     if not product:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Product not found")
@@ -95,7 +95,7 @@ def get_product(product_id: int, db: Session = Depends(get_db)):
 @app.post("/products", response_model=schemas.Product, status_code=status.HTTP_201_CREATED,
           dependencies=[Depends(verify_api_key)])
 @limiter.limit("20/minute")
-def create_product(product_in: schemas.ProductCreate, db: Session = Depends(get_db)):
+def create_product(request: Request, product_in: schemas.ProductCreate, db: Session = Depends(get_db)):
     supplier = crud.get_supplier(db, product_in.supplier_id)
     if not supplier:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid Supplier")
@@ -105,7 +105,7 @@ def create_product(product_in: schemas.ProductCreate, db: Session = Depends(get_
 @app.put("/products/{product_id}", response_model=schemas.Product,
          dependencies=[Depends(verify_api_key)])
 @limiter.limit("20/minute")
-def update_product(product_id: int, product_in: schemas.ProductUpdate, db: Session = Depends(get_db)):
+def update_product(request: Request, product_id: int, product_in: schemas.ProductUpdate, db: Session = Depends(get_db)):
     product = crud.get_product(db, product_id)
     if not product:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Product not found")
@@ -121,7 +121,7 @@ def update_product(product_id: int, product_in: schemas.ProductUpdate, db: Sessi
 @app.delete("/products/{product_id}", status_code=status.HTTP_204_NO_CONTENT,
             dependencies=[Depends(verify_api_key)])
 @limiter.limit("20/minute")
-def delete_product(product_id: int, db: Session = Depends(get_db)):
+def delete_product(request: Request, product_id: int, db: Session = Depends(get_db)):
     product = crud.get_product(db, product_id)
     if not product:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Product not found")
