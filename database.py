@@ -1,14 +1,14 @@
-import os
+import settings
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 from google.cloud.sql.connector import Connector
 
-INSTANCE_CONNECTION_NAME = os.getenv("INSTANCE_CONNECTION_NAME", "projeto:regiao:instancia")
-DB_USER = os.getenv("DB_USER", "usuario")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "senha123")
-DB_HOST = os.getenv("DB_HOST", "localhost")
-DB_PORT = os.getenv("DB_PORT", "5432")
-DB_NAME = os.getenv("DB_NAME", "meubanco")
+INSTANCE_CONNECTION_NAME = settings.INSTANCE_CONNECTION_NAME
+DB_USER = settings.DB_USER
+DB_PASSWORD = settings.DB_PASSWORD
+DB_HOST = settings.DB_HOST
+DB_PORT = settings.DB_PORT
+DB_NAME = settings.DB_NAME
 
 # Inicializa o Conector
 connector = Connector()

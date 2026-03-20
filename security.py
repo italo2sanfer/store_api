@@ -1,9 +1,9 @@
 # security.py
-import os
 from fastapi import Header, HTTPException, status
+import settings
 
 def verify_api_key(x_api_key: str | None = Header(default=None)):
-    expected = os.getenv("API_KEY")
+    expected = settings.API_KEY
 
     if expected is None:
         raise HTTPException(
